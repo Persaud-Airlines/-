@@ -27,22 +27,10 @@
     </form>
   </div>
 
-  <!-- Bookings Table -->
+  <!-- Bookings Cards -->
   <div id="bookings-section" class="hidden">
-    <h2 class="text-2xl font-semibold mb-4">Bookings</h2>
-    <table class="w-full border-collapse border border-gray-700 text-sm">
-      <thead>
-        <tr class="bg-gray-800 text-gold">
-          <th class="border border-gray-700 p-2">Name</th>
-          <th class="border border-gray-700 p-2">Email</th>
-          <th class="border border-gray-700 p-2">From</th>
-          <th class="border border-gray-700 p-2">To</th>
-          <th class="border border-gray-700 p-2">Passengers</th>
-          <th class="border border-gray-700 p-2">Submitted</th>
-        </tr>
-      </thead>
-      <tbody id="bookings-table"></tbody>
-    </table>
+    <h2 class="text-2xl font-semibold mb-6">Bookings</h2>
+    <div id="bookings-cards" class="grid md:grid-cols-2 gap-6"></div>
   </div>
 
   <script type="module">
@@ -64,7 +52,7 @@
     const loginForm = document.getElementById('login-form');
     const loginSection = document.getElementById('login-section');
     const bookingsSection = document.getElementById('bookings-section');
-    const bookingsTable = document.getElementById('bookings-table');
+    const bookingsCards = document.getElementById('bookings-cards');
 
     const ADMIN_EMAIL = "persaud-airlines@mail.ru";
     const ADMIN_PASS = "PA28161";
@@ -85,20 +73,42 @@
 
     async function loadBookings() {
       const querySnapshot = await getDocs(collection(db, "bookings"));
-      bookingsTable.innerHTML = "";
+      bookingsCards.innerHTML = "";
+
       querySnapshot.forEach((doc) => {
         const data = doc.data();
-        const row = document.createElement("tr");
-        row.classList.add("border", "border-gray-700");
-        row.innerHTML = `
-          <td class="p-2">${data.name}</td>
-          <td class="p-2">${data.email}</td>
-          <td class="p-2">${data.departure}</td>
-          <td class="p-2">${data.destination}</td>
-          <td class="p-2">${data.passengers}</td>
-          <td class="p-2">${new Date(data.submittedAt).toLocaleString()}</td>
+
+        const card = document.createElement("div");
+        card.className = "bg-gray-900 border border-gold rounded-lg p-4 cursor-pointer hover:shadow-lg transition";
+
+        const cardHeader = document.createElement("div");
+        cardHeader.className = "flex justify-between items-center";
+        cardHeader.innerHTML = `<h3 class="text-lg font-bold text-gold">${data.name}</h3>
+                                <span class="text-gray-400 text-sm">${new Date(data.submittedAt).toLocaleString()}</span>`;
+
+        const cardDetails = document.createElement("div");
+        cardDetails.className = "mt-4 hidden text-gray-300 space-y-2";
+        cardDetails.innerHTML = `
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Phone:</strong> ${data.phone}</p>
+          <p><strong>Company:</strong> ${data.company || "N/A"}</p>
+          <p><strong>Departure:</strong> ${data.departure}</p>
+          <p><strong>Destination:</strong> ${data.destination}</p>
+          <p><strong>Departure Date:</strong> ${data.departureDate}</p>
+          <p><strong>Return Date:</strong> ${data.returnDate || "N/A"}</p>
+          <p><strong>Passengers:</strong> ${data.passengers}</p>
+          <p><strong>Aircraft:</strong> ${data.aircraft || "No preference"}</p>
+          <p><strong>Special Requests:</strong> ${data.specialRequests || "None"}</p>
+          <p><strong>Terms Accepted:</strong> ${data.termsAccepted ? "Yes" : "No"}</p>
         `;
-        bookingsTable.appendChild(row);
+
+        card.addEventListener('click', () => {
+          cardDetails.classList.toggle('hidden');
+        });
+
+        card.appendChild(cardHeader);
+        card.appendChild(cardDetails);
+        bookingsCards.appendChild(card);
       });
     }
   </script>
