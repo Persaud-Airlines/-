@@ -111,7 +111,14 @@
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <label for="passengers" class="block text-sm font-medium mb-2">Number of Passengers</label>
-              <input type="number" id="passengers" name="passengers" min="1" max="20" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" placeholder="Enter number of passengers" required>
+              <select id="passengers" name="passengers" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
+                <option value="" disabled selected>Select passengers</option>
+                <option value="1-2">1-2 passengers</option>
+                <option value="3-4">3-4 passengers</option>
+                <option value="5-6">5-6 passengers</option>
+                <option value="7-8">7-8 passengers</option>
+                <option value="9+">9+ passengers</option>
+              </select>
             </div>
             <div>
               <label for="aircraft" class="block text-sm font-medium mb-2">Preferred Aircraft Type</label>
@@ -195,46 +202,59 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark border-t border-gold py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="text-gold text-lg font-semibold mb-4">PERSAUD AIRLINES</h3>
-          <p class="text-gray-400">Luxury private charter flights from CYSN (YCM) Airport.</p>
-        </div>
-        <div>
-          <h3 class="text-gold text-lg font-semibold mb-4">QUICK LINKS</h3>
-          <ul class="space-y-2">
-            <li><a href="index.html" class="text-gray-400 hover:text-gold transition duration-300">Home</a></li>
-            <li><a href="map.html" class="text-gray-400 hover:text-gold transition duration-300">Our Base</a></li>
-            <li><a href="about.html" class="text-gray-400 hover:text-gold transition duration-300">About</a></li>
-            <li><a href="booking.html" class="text-gray-400 hover:text-gold transition duration-300">Booking</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-gold text-lg font-semibold mb-4">CONTACT</h3>
-          <ul class="space-y-2">
-            <li class="text-gray-400"><i data-feather="phone" class="inline mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
-            <li class="text-gray-400"><i data-feather="mail" class="inline mr-2 w-4 h-4"></i> info@persaudair.com</li>
-            <li class="text-gray-400"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> CYSN (YCM) Airport</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-gold text-lg font-semibold mb-4">FOLLOW US</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
-            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="twitter" class="w-5 h-5"></i></a>
-            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
-            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="linkedin" class="w-5 h-5"></i></a>
-          </div>
-        </div>
+<!-- Footer -->
+<footer class="bg-dark border-t border-gold py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-gold text-lg font-semibold mb-4">PERSAUD AIRLINES</h3>
+        <p class="text-gray-400">Luxury private charter flights from CYSN (YCM) Airport.</p>
       </div>
-      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-        <p>&copy; 2023 Persaud Airlines. All rights reserved.</p>
+      <div>
+        <h3 class="text-gold text-lg font-semibold mb-4">QUICK LINKS</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-400 hover:text-gold transition duration-300">Home</a></li>
+          <li><a href="map.html" class="text-gray-400 hover:text-gold transition duration-300">Our Base</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-gold transition duration-300">About</a></li>
+          <li><a href="booking.html" class="text-gray-400 hover:text-gold transition duration-300">Booking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-gold text-lg font-semibold mb-4">CONTACT</h3>
+        <ul class="space-y-2">
+          <li class="text-gray-400"><i data-feather="phone" class="inline mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
+          <li class="text-gray-400"><i data-feather="mail" class="inline mr-2 w-4 h-4"></i> info@persaudair.com</li>
+          <li class="text-gray-400"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> CYSN (YCM) Airport</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-gold text-lg font-semibold mb-4">FOLLOW US</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
+          <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="twitter" class="w-5 h-5"></i></a>
+          <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
+          <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+        </div>
       </div>
     </div>
-  </footer>
+
+    <!-- Bottom Bar with Copyright & Admin Key -->
+    <div class="border-t border-gray-800 mt-12 pt-8 flex justify-between items-center text-gray-500">
+      <p>&copy; 2023 Persaud Airlines. All rights reserved.</p>
+      <a href="admin.html" class="hover:text-gold transition duration-300" title="Admin Access">
+        <i data-feather="key" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Feather Icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+
+
 
   <script>
     AOS.init({
@@ -251,13 +271,52 @@
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-
-    // Form submission
-    document.getElementById('booking-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your booking request! Our team will contact you within 24 hours to confirm your flight details.');
-      this.reset();
-    });
   </script>
-</body>
-</html>
+
+  <!-- Firebase Integration -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCA4gFSAoD0_EKX8Na7hx0dKv44XBecSLk",
+    authDomain: "persaud-airlines.firebaseapp.com",
+    projectId: "persaud-airlines",
+    storageBucket: "persaud-airlines.appspot.com",
+    messagingSenderId: "974190271242",
+    appId: "1:974190271242:web:da5aa18403b258d546f8f3"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      departure: bookingForm.departure.value,
+      destination: bookingForm.destination.value,
+      departureDate: bookingForm['departure-date'].value,
+      returnDate: bookingForm['return-date'].value,
+      passengers: bookingForm.passengers.value,
+      aircraft: bookingForm.aircraft.value,
+      specialRequests: bookingForm['special-requests'].value,
+      name: bookingForm.name.value,
+      email: bookingForm.email.value,
+      phone: bookingForm.phone.value,
+      company: bookingForm.company.value,
+      termsAccepted: bookingForm.terms.checked,
+      submittedAt: new Date().toISOString()
+    };
+
+    try {
+      await addDoc(collection(db, "bookings"), formData);
+      alert("Thank you! Your booking request has been submitted.");
+      bookingForm.reset();
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+      alert("There was an issue submitting your booking. Please try again.");
+    }
+  });
+</script>
