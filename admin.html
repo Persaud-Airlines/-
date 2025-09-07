@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Persaud Airlines</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: { colors: { gold: '#D4AF37', dark: '#111827' } }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-sans p-6">
+
+  <h1 class="text-3xl text-gold font-bold mb-6">Admin Panel</h1>
+  
+  <!-- Login Form -->
+  <div id="login-section" class="max-w-md bg-gray-900 p-6 rounded-lg border border-gold mb-6">
+    <h2 class="text-xl font-semibold mb-4">Login</h2>
+    <form id="login-form" class="space-y-4">
+      <input type="email" id="admin-email" placeholder="Email" class="w-full p-3 rounded bg-gray-800 border border-gray-700" required>
+      <input type="password" id="admin-password" placeholder="Password" class="w-full p-3 rounded bg-gray-800 border border-gray-700" required>
+      <button type="submit" class="w-full bg-gold text-dark py-2 px-4 rounded font-bold">Login</button>
+    </form>
+  </div>
+
+  <!-- Bookings Table -->
+  <div id="bookings-section" class="hidden">
+    <h2 class="text-2xl font-semibold mb-4">Bookings</h2>
+    <table class="w-full border-collapse border border-gray-700 text-sm">
+      <thead>
+        <tr class="bg-gray-800 text-gold">
+          <th class="border border-gray-700 p-2">Name</th>
+          <th class="border border-gray-700 p-2">Email</th>
+          <th class="border border-gray-700 p-2">From</th>
+          <th class="border border-gray-700 p-2">To</th>
+          <th class="border border-gray-700 p-2">Passengers</th>
+          <th class="border border-gray-700 p-2">Submitted</th>
+        </tr>
+      </thead>
+      <tbody id="bookings-table"></tbody>
+    </table>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCA4gFSAoD0_EKX8Na7hx0dKv44XBecSLk",
+      authDomain: "persaud-airlines.firebaseapp.com",
+      projectId: "persaud-airlines",
+      storageBucket: "persaud-airlines.appspot.com",
+      messagingSenderId: "974190271242",
+      appId: "1:974190271242:web:da5aa18403b258d546f8f3"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const loginForm = document.getElementById('login-form');
+    const loginSection = document.getElementById('login-section');
+    const bookingsSection = document.getElementById('bookings-section');
+    const bookingsTable = document.getElementById('bookings-table');
+
+    const ADMIN_EMAIL = "persaud-airlines@mail.ru";
+    const ADMIN_PASS = "PA28161";
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('admin-email').value;
+      const password = document.getElementById('admin-password').value;
+
+      if (email === ADMIN_EMAIL && password === ADMIN_PASS) {
+        loginSection.classList.add('hidden');
+        bookingsSection.classList.remove('hidden');
+        loadBookings();
+      } else {
+        alert("Invalid credentials!");
+      }
+    });
+
+    async function loadBookings() {
+      const querySnapshot = await getDocs(collection(db, "bookings"));
+      bookingsTable.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const row = document.createElement("tr");
+        row.classList.add("border", "border-gray-700");
+        row.innerHTML = `
+          <td class="p-2">${data.name}</td>
+          <td class="p-2">${data.email}</td>
+          <td class="p-2">${data.departure}</td>
+          <td class="p-2">${data.destination}</td>
+          <td class="p-2">${data.passengers}</td>
+          <td class="p-2">${new Date(data.submittedAt).toLocaleString()}</td>
+        `;
+        bookingsTable.appendChild(row);
+      });
+    }
+  </script>
+</body>
+</html>
