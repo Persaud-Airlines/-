@@ -83,7 +83,8 @@
 
         const cardHeader = document.createElement("div");
         cardHeader.className = "flex justify-between items-center";
-        cardHeader.innerHTML = `<h3 class="text-lg font-bold text-gold">${data.name}</h3>
+        const primaryPassenger = data.passengers[0]?.name || "Passenger 1";
+        cardHeader.innerHTML = `<h3 class="text-lg font-bold text-gold">${primaryPassenger}</h3>
                                 <span class="text-gray-400 text-sm">${new Date(data.submittedAt).toLocaleString()}</span>`;
 
         const cardDetails = document.createElement("div");
@@ -96,8 +97,10 @@
           <p><strong>Destination:</strong> ${data.destination}</p>
           <p><strong>Departure Date:</strong> ${data.departureDate}</p>
           <p><strong>Return Date:</strong> ${data.returnDate || "N/A"}</p>
-          <p><strong>Passengers:</strong> ${data.passengers}</p>
-          <p><strong>Aircraft:</strong> ${data.aircraft || "No preference"}</p>
+          <p><strong>Passengers:</strong></p>
+          <ul class="list-disc list-inside ml-4">
+            ${data.passengers.map((p, i) => `<li>${p.name} (Age: ${p.age})</li>`).join('')}
+          </ul>
           <p><strong>Special Requests:</strong> ${data.specialRequests || "None"}</p>
           <p><strong>Terms Accepted:</strong> ${data.termsAccepted ? "Yes" : "No"}</p>
         `;
