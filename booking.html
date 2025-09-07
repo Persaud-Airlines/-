@@ -151,18 +151,18 @@
           
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div>
-              <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+              <label for="name" class="block text-sm font-medium mb-2">Primary Passenger Full Name</label>
               <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+              <label for="email" class="block text-sm font-medium mb-2">Primary Email Address</label>
               <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
             </div>
           </div>
           
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div>
-              <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+              <label for="phone" class="block text-sm font-medium mb-2">Primary Phone Number</label>
               <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
             </div>
             <div>
@@ -204,11 +204,11 @@
         div.classList.add('grid','md:grid-cols-2','gap-4','bg-gray-700','p-3','rounded');
         div.innerHTML=`
           <div>
-            <label class="block text-sm font-medium mb-1">${type.charAt(0).toUpperCase()+type.slice(1)} ${i} Name (as on documents)</label>
+            <label class="block text-sm font-medium mb-1">${type.charAt(0).toUpperCase()+type.slice(1)} ${i} Full Legal Name (as on documents)</label>
             <input type="text" name="${type}-name-${i}" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1">${type.charAt(0).toUpperCase()+type.slice(1)} ${i} Age</label>
+            <label class="block text-sm font-medium mb-1">${type.charAt(0).toUpperCase()+type.slice(1)} ${i} Age (at time of departure)</label>
             <input type="number" name="${type}-age-${i}" min="0" max="120" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
           </div>
         `;
