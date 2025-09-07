@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persaud Airlines | Private Charter Flights</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: '#D4AF37',
+              dark: '#111827',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      .hero-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/black/1200x630/1');
+        background-size: cover;
+        background-position: center;
+      }
+      .gold-hover:hover {
+        color: #D4AF37;
+        transition: all 0.3s ease;
+      }
+      .border-gold {
+        border-color: #D4AF37;
+      }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-dark bg-opacity-90 z-50 border-b border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-gold text-2xl font-bold">PERSAUD AIRLINES</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gold transition duration-300">Home</a>
+          <a href="map.html" class="text-white hover:text-gold transition duration-300">Our Base</a>
+          <a href="about.html" class="text-white hover:text-gold transition duration-300">About</a>
+          <a href="booking.html" class="bg-gold text-dark px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Book Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark pb-4 border-t border-gold">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 text-white hover:text-gold">Home</a>
+        <a href="map.html" class="block px-3 py-2 text-white hover:text-gold">Our Base</a>
+        <a href="about.html" class="block px-3 py-2 text-white hover:text-gold">About</a>
+        <a href="booking.html" class="block px-3 py-2 text-gold font-medium">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">EXCLUSIVE PRIVATE CHARTERS</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Experience luxury air travel tailored to your schedule with Persaud Airlines</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="booking.html" class="bg-gold text-dark px-8 py-3 rounded-md text-lg font-semibold hover:bg-opacity-90 transition duration-300">Book Your Flight</a>
+        <a href="about.html" class="border border-gold text-gold px-8 py-3 rounded-md text-lg font-semibold hover:bg-gold hover:bg-opacity-10 transition duration-300">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 bg-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gold" data-aos="fade-up">OUR SERVICES</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-gold transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-gold mb-4">
+            <i data-feather="briefcase" class="w-12 h-12"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Business Travel</h3>
+          <p class="text-gray-300">Efficient and discreet travel for executives with flexible scheduling and premium amenities.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-gold transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-gold mb-4">
+            <i data-feather="map" class="w-12 h-12"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Leisure Travel</h3>
+          <p class="text-gray-300">Custom vacation flights to your dream destinations with personalized service.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-gold transition duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-gold mb-4">
+            <i data-feather="users" class="w-12 h-12"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Group Charters</h3>
+          <p class="text-gray-300">Spacious aircraft options for family reunions, corporate retreats, or special events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">READY TO EXPERIENCE LUXURY FLIGHT?</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contact us today to discuss your private charter needs.</p>
+      <a href="booking.html" class="inline-block bg-gold text-dark px-8 py-3 rounded-md text-lg font-semibold hover:bg-opacity-90 transition duration-300" data-aos="fade-up" data-aos-delay="200">Get a Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark border-t border-gold py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">PERSAUD AIRLINES</h3>
+          <p class="text-gray-400">Luxury private charter flights from CYSN (YCM) Airport.</p>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">QUICK LINKS</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-gold transition duration-300">Home</a></li>
+            <li><a href="map.html" class="text-gray-400 hover:text-gold transition duration-300">Our Base</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-gold transition duration-300">About</a></li>
+            <li><a href="booking.html" class="text-gray-400 hover:text-gold transition duration-300">Booking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">CONTACT</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-400"><i data-feather="phone" class="inline mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
+            <li class="text-gray-400"><i data-feather="mail" class="inline mr-2 w-4 h-4"></i> info@persaudair.com</li>
+            <li class="text-gray-400"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> CYSN (YCM) Airport</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">FOLLOW US</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>&copy; 2023 Persaud Airlines. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    feather.replace();
+    
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

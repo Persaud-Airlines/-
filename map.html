@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Base | Persaud Airlines</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: '#D4AF37',
+              dark: '#111827',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      .map-container {
+        height: 500px;
+        width: 100%;
+      }
+      .gold-hover:hover {
+        color: #D4AF37;
+        transition: all 0.3s ease;
+      }
+      .border-gold {
+        border-color: #D4AF37;
+      }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-dark bg-opacity-90 z-50 border-b border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-gold text-2xl font-bold">PERSAUD AIRLINES</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gold transition duration-300">Home</a>
+          <a href="map.html" class="text-gold border-b border-gold">Our Base</a>
+          <a href="about.html" class="text-white hover:text-gold transition duration-300">About</a>
+          <a href="booking.html" class="bg-gold text-dark px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Book Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark pb-4 border-t border-gold">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 text-white hover:text-gold">Home</a>
+        <a href="map.html" class="block px-3 py-2 text-gold font-medium">Our Base</a>
+        <a href="about.html" class="block px-3 py-2 text-white hover:text-gold">About</a>
+        <a href="booking.html" class="block px-3 py-2 text-white hover:bg-gold hover:bg-opacity-10">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gold" data-aos="fade-up">OUR HOME BASE</h1>
+      <p class="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">CYSN (YCM) Airport serves as the headquarters for Persaud Airlines, offering premium facilities for our private charters.</p>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-12 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-dark rounded-lg overflow-hidden border border-gold" data-aos="fade-up">
+        <div class="map-container" id="map">
+          <!-- Map will be embedded here -->
+          <img src="http://static.photos/black/1200x630/2" alt="CYSN Airport Map" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h2 class="text-2xl font-bold mb-4 text-gold">St. Catharines/Niagara District Airport (CYSN/YCM)</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Facilities</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start"><i data-feather="check-circle" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>24/7 operations with customs available</span></li>
+                <li class="flex items-start"><i data-feather="check-circle" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Executive lounge and meeting rooms</span></li>
+                <li class="flex items-start"><i data-feather="check-circle" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Premium hangar facilities</span></li>
+                <li class="flex items-start"><i data-feather="check-circle" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Concierge and ground transportation services</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Location Advantages</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start"><i data-feather="map-pin" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Convenient access to Niagara region and Greater Toronto Area</span></li>
+                <li class="flex items-start"><i data-feather="clock" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Quick clearance and minimal ground delays</span></li>
+                <li class="flex items-start"><i data-feather="shield" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Enhanced security and privacy</span></li>
+                <li class="flex items-start"><i data-feather="star" class="text-gold mr-2 mt-1 w-4 h-4"></i> <span>Dedicated Persaud Airlines facilities</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Attractions -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gold" data-aos="fade-up">NEARBY DESTINATIONS</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-gold transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <img src="http://static.photos/travel/640x360/1" alt="Niagara Falls" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Niagara Falls</h3>
+            <p class="text-gray-400 mb-4">25 minutes by car from CYSN</p>
+            <p class="text-gray-300">The world-famous waterfalls and entertainment district.</p>
+          </div>
+        </div>
+        <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-gold transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <img src="http://static.photos/cityscape/640x360/1" alt="Toronto" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Toronto</h3>
+            <p class="text-gray-400 mb-4">1 hour by car from CYSN</p>
+            <p class="text-gray-300">Canada's largest city with world-class dining and entertainment.</p>
+          </div>
+        </div>
+        <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-gold transition duration-300" data-aos="fade-up" data-aos-delay="300">
+          <img src="http://static.photos/food/640x360/1" alt="Wine Country" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Niagara Wine Country</h3>
+            <p class="text-gray-400 mb-4">15 minutes by car from CYSN</p>
+            <p class="text-gray-300">Renowned wineries and culinary experiences.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark border-t border-gold py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">PERSAUD AIRLINES</h3>
+          <p class="text-gray-400">Luxury private charter flights from CYSN (YCM) Airport.</p>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">QUICK LINKS</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-gold transition duration-300">Home</a></li>
+            <li><a href="map.html" class="text-gray-400 hover:text-gold transition duration-300">Our Base</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-gold transition duration-300">About</a></li>
+            <li><a href="booking.html" class="text-gray-400 hover:text-gold transition duration-300">Booking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">CONTACT</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-400"><i data-feather="phone" class="inline mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
+            <li class="text-gray-400"><i data-feather="mail" class="inline mr-2 w-4 h-4"></i> info@persaudair.com</li>
+            <li class="text-gray-400"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> CYSN (YCM) Airport</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">FOLLOW US</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>&copy; 2023 Persaud Airlines. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    feather.replace();
+    
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

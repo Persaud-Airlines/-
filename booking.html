@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Flight | Persaud Airlines</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: '#D4AF37',
+              dark: '#111827',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      .booking-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/black/1200x630/3');
+        background-size: cover;
+        background-position: center;
+      }
+      .gold-hover:hover {
+        color: #D4AF37;
+        transition: all 0.3s ease;
+      }
+      .border-gold {
+        border-color: #D4AF37;
+      }
+      input:focus, select:focus, textarea:focus {
+        border-color: #D4AF37 !important;
+        box-shadow: 0 0 0 1px #D4AF37 !important;
+      }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-dark bg-opacity-90 z-50 border-b border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-gold text-2xl font-bold">PERSAUD AIRLINES</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gold transition duration-300">Home</a>
+          <a href="map.html" class="text-white hover:text-gold transition duration-300">Our Base</a>
+          <a href="about.html" class="text-white hover:text-gold transition duration-300">About</a>
+          <a href="booking.html" class="bg-gold text-dark px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Book Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark pb-4 border-t border-gold">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 text-white hover:text-gold">Home</a>
+        <a href="map.html" class="block px-3 py-2 text-white hover:text-gold">Our Base</a>
+        <a href="about.html" class="block px-3 py-2 text-white hover:text-gold">About</a>
+        <a href="booking.html" class="block px-3 py-2 text-gold font-medium">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="booking-bg pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gold" data-aos="fade-up">BOOK YOUR FLIGHT</h1>
+      <p class="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Complete the form below to request a private charter flight. Our team will contact you within 24 hours to confirm your booking.</p>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gray-900 rounded-lg border border-gold p-8" data-aos="fade-up">
+        <form id="booking-form">
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label for="departure" class="block text-sm font-medium mb-2">Departure Airport</label>
+              <input type="text" id="departure" name="departure" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" placeholder="CYSN (YCM) or other" required>
+            </div>
+            <div>
+              <label for="destination" class="block text-sm font-medium mb-2">Destination Airport</label>
+              <input type="text" id="destination" name="destination" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" placeholder="Enter airport code or city" required>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label for="departure-date" class="block text-sm font-medium mb-2">Departure Date</label>
+              <input type="date" id="departure-date" name="departure-date" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
+            </div>
+            <div>
+              <label for="return-date" class="block text-sm font-medium mb-2">Return Date (if round trip)</label>
+              <input type="date" id="return-date" name="return-date" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none">
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label for="passengers" class="block text-sm font-medium mb-2">Number of Passengers</label>
+              <select id="passengers" name="passengers" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
+                <option value="" disabled selected>Select passengers</option>
+                <option value="1-2">1-2 passengers</option>
+                <option value="3-4">3-4 passengers</option>
+                <option value="5-6">5-6 passengers</option>
+                <option value="7-8">7-8 passengers</option>
+                <option value="9+">9+ passengers</option>
+              </select>
+            </div>
+            <div>
+              <label for="aircraft" class="block text-sm font-medium mb-2">Preferred Aircraft Type</label>
+              <select id="aircraft" name="aircraft" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none">
+                <option value="" disabled selected>Select preferred aircraft</option>
+                <option value="light-jet">Light Jet (4-6 passengers)</option>
+                <option value="midsize-jet">Midsize Jet (6-8 passengers)</option>
+                <option value="turboprop">Turboprop (6-9 passengers)</option>
+                <option value="no-preference">No preference</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <label for="special-requests" class="block text-sm font-medium mb-2">Special Requests</label>
+            <textarea id="special-requests" name="special-requests" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" placeholder="Catering, ground transportation, pet policy, etc."></textarea>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none" required>
+            </div>
+            <div>
+              <label for="company" class="block text-sm font-medium mb-2">Company (if applicable)</label>
+              <input type="text" id="company" name="company" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none">
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-8">
+            <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-gold focus:ring-gold border-gray-700 rounded bg-gray-800" required>
+            <label for="terms" class="ml-2 block text-sm text-gray-300">
+              I agree to the <a href="#" class="text-gold hover:underline">terms and conditions</a> and understand this is a booking request, not a confirmed reservation.
+            </label>
+          </div>
+          
+          <button type="submit" class="w-full bg-gold text-dark py-3 px-4 rounded-md font-semibold hover:bg-opacity-90 transition duration-300">Submit Booking Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Process -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gold" data-aos="fade-up">OUR BOOKING PROCESS</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border border-gold">
+            <i data-feather="edit" class="text-gold w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">1. Submit Request</h3>
+          <p class="text-gray-400">Complete our booking form with your flight details and contact information.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border border-gold">
+            <i data-feather="phone" class="text-gold w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">2. Consultation</h3>
+          <p class="text-gray-400">Our flight coordinator will contact you within 24 hours to discuss your itinerary.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border border-gold">
+            <i data-feather="check-circle" class="text-gold w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">3. Confirmation</h3>
+          <p class="text-gray-400">Receive your flight confirmation and prepare for an exceptional travel experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark border-t border-gold py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">PERSAUD AIRLINES</h3>
+          <p class="text-gray-400">Luxury private charter flights from CYSN (YCM) Airport.</p>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">QUICK LINKS</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-gold transition duration-300">Home</a></li>
+            <li><a href="map.html" class="text-gray-400 hover:text-gold transition duration-300">Our Base</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-gold transition duration-300">About</a></li>
+            <li><a href="booking.html" class="text-gray-400 hover:text-gold transition duration-300">Booking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">CONTACT</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-400"><i data-feather="phone" class="inline mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
+            <li class="text-gray-400"><i data-feather="mail" class="inline mr-2 w-4 h-4"></i> info@persaudair.com</li>
+            <li class="text-gray-400"><i data-feather="map-pin" class="inline mr-2 w-4 h-4"></i> CYSN (YCM) Airport</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gold text-lg font-semibold mb-4">FOLLOW US</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="facebook" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition duration-300"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>&copy; 2023 Persaud Airlines. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    feather.replace();
+    
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Form submission
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your booking request! Our team will contact you within 24 hours to confirm your flight details.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
